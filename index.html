@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Earth.MC - Geopolitical Minecraft Server">
   <title>Earth.MC | Geopolitical Minecraft Server</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Minecraft:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   
   <style>
     * {
@@ -18,20 +18,18 @@
       --grass-green: #5cb85c;
       --dark-green: #2d5016;
       --emerald: #50c878;
-      --dirt-brown: #8b4513;
-      --stone-gray: #7f8c8d;
-      --dark-bg: #1a1a1a;
+      --dark-bg: #0f0f0f;
       --light-text: #ecf0f1;
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #1a1a1a 0%, #2d5016 100%);
+      background: #0f0f0f;
       color: var(--light-text);
       overflow-x: hidden;
     }
 
-    /* Animated background */
+    /* Custom Minecraft-style background */
     body::before {
       content: '';
       position: fixed;
@@ -39,11 +37,23 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: 
-        repeating-linear-gradient(90deg, rgba(92, 184, 92, 0.03) 0px, transparent 2px, transparent 4px, rgba(92, 184, 92, 0.03) 6px),
-        repeating-linear-gradient(0deg, rgba(92, 184, 92, 0.03) 0px, transparent 2px, transparent 4px, rgba(92, 184, 92, 0.03) 6px);
+      background: 
+        linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 50%, #1a1a1a 100%),
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(92, 184, 92, 0.02) 2px, rgba(92, 184, 92, 0.02) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(92, 184, 92, 0.02) 2px, rgba(92, 184, 92, 0.02) 4px);
       z-index: -1;
-      opacity: 0.5;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 50%, rgba(45, 80, 22, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(92, 184, 92, 0.05) 0%, transparent 50%);
+      z-index: -1;
     }
 
     /* Navigation */
@@ -52,13 +62,13 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.5rem 4rem;
-      background: rgba(26, 26, 26, 0.95);
+      background: rgba(15, 15, 15, 0.95);
       backdrop-filter: blur(10px);
       border-bottom: 3px solid var(--grass-green);
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     }
 
     .logo {
@@ -122,7 +132,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at center, transparent 0%, rgba(26, 26, 26, 0.8) 100%);
+      background: radial-gradient(circle at center, transparent 0%, rgba(15, 15, 15, 0.9) 100%);
     }
 
     .hero-content {
@@ -209,11 +219,11 @@
       max-width: 1200px;
       margin: 4rem auto;
       padding: 3rem 2rem;
-      background: rgba(26, 26, 26, 0.8);
+      background: rgba(15, 15, 15, 0.9);
       backdrop-filter: blur(10px);
       border-radius: 16px;
       border: 2px solid rgba(92, 184, 92, 0.3);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
     }
 
     section h2 {
@@ -234,7 +244,7 @@
     }
 
     .server-info {
-      background: rgba(45, 80, 22, 0.3);
+      background: rgba(45, 80, 22, 0.2);
       padding: 2rem;
       border-radius: 12px;
       border: 2px solid var(--grass-green);
@@ -247,7 +257,7 @@
       color: var(--emerald);
       text-align: center;
       padding: 1rem;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.5);
       border-radius: 8px;
       margin: 1rem 0;
       cursor: pointer;
@@ -255,7 +265,7 @@
     }
 
     .server-ip:hover {
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.7);
       transform: scale(1.02);
     }
 
@@ -267,7 +277,7 @@
     }
 
     .feature-card {
-      background: rgba(45, 80, 22, 0.3);
+      background: rgba(45, 80, 22, 0.2);
       padding: 2rem;
       border-radius: 12px;
       border: 2px solid rgba(92, 184, 92, 0.5);
@@ -294,7 +304,7 @@
 
     /* Footer */
     footer {
-      background: rgba(26, 26, 26, 0.95);
+      background: rgba(15, 15, 15, 0.95);
       text-align: center;
       padding: 2rem;
       border-top: 3px solid var(--grass-green);
@@ -361,7 +371,7 @@
   <div class="hero">
     <div class="hero-content">
       <h1>EARTH.MC</h1>
-      <p class="subtitle">Build nations. Forge alliances. Shape history. Experience the ultimate geopolitical Minecraft adventure on a real-world Earth map.</p>
+      <p class="subtitle">A geopolitical Minecraft server on a real-world Earth map. Build nations, forge alliances, and engage in strategic warfare that shapes global history.</p>
       <div class="cta-buttons">
         <a href="https://discord.gg/YOURSERVERLINK" class="btn btn-primary" target="_blank">Join Discord</a>
         <a href="#server" class="btn btn-secondary">Get Server IP</a>
@@ -372,23 +382,23 @@
   <!-- About Section -->
   <section id="about">
     <h2>About Earth.MC</h2>
-    <p>Welcome to Earth.MC, where geopolitics meets Minecraft. Build your empire on a 1:1000 scale Earth map, create nations, engage in diplomacy, and participate in wars that reshape the world.</p>
+    <p>Earth.MC is a geopolitical Minecraft server featuring a 1:1000 scale Earth map. Players establish nations, manage economies, conduct diplomacy, and participate in strategic warfare across all continents.</p>
     <div class="features-grid">
       <div class="feature-card">
-        <h3>⚔️ Nations & Wars</h3>
-        <p>Create or join nations, declare wars, and conquer territories in strategic battles.</p>
+        <h3>Nations and Warfare</h3>
+        <p>Establish or join nations, declare wars, and conquer territories through strategic military operations.</p>
       </div>
       <div class="feature-card">
-        <h3>🌍 Real Earth Map</h3>
-        <p>Play on an accurate Earth terrain map with real-world geography and biomes.</p>
+        <h3>Real Earth Map</h3>
+        <p>Navigate an accurate Earth terrain map featuring real-world geography, biomes, and landmasses.</p>
       </div>
       <div class="feature-card">
-        <h3>🤝 Diplomacy</h3>
-        <p>Form alliances, negotiate treaties, and engage in complex political strategy.</p>
+        <h3>Political Systems</h3>
+        <p>Engage in complex diplomatic relations, negotiate treaties, and form international alliances.</p>
       </div>
       <div class="feature-card">
-        <h3>💰 Economy System</h3>
-        <p>Build a thriving economy through trade, resources, and national development.</p>
+        <h3>Economic Development</h3>
+        <p>Develop national economies through resource management, trade agreements, and infrastructure development.</p>
       </div>
     </div>
   </section>
@@ -397,39 +407,39 @@
   <section id="server">
     <h2>Server Information</h2>
     <div class="server-info">
-      <p style="font-size: 1.1rem; margin-bottom: 1rem;">Connect to our server:</p>
-      <div class="server-ip" onclick="navigator.clipboard.writeText('play.earth.mc'); alert('Server IP copied to clipboard!')">
+      <p style="font-size: 1.1rem; margin-bottom: 1rem;">Server Address</p>
+      <div class="server-ip" onclick="navigator.clipboard.writeText('play.earth.mc'); alert('Server IP copied to clipboard')">
         play.earth.mc
       </div>
-      <p style="font-size: 0.9rem; color: var(--emerald);">Click to copy!</p>
+      <p style="font-size: 0.9rem; color: var(--emerald);">Click to copy</p>
       <p style="margin-top: 2rem;"><strong>Version:</strong> 1.20+</p>
-      <p><strong>Players:</strong> 100+ Active Daily</p>
+      <p><strong>Active Players:</strong> 100+ Daily</p>
     </div>
     <div style="text-align: center; margin-top: 2rem;">
-      <a href="https://docs.google.com/document/d/1HYHfjA6p3PQEadXiR0ExEz6emdcRSdyWFVcYeZwYDRc/edit?usp=sharing" class="btn btn-primary" target="_blank">View Full Rules & Guides</a>
+      <a href="https://docs.google.com/document/d/1HYHfjA6p3PQEadXiR0ExEz6emdcRSdyWFVcYeZwYDRc/edit?usp=sharing" class="btn btn-primary" target="_blank">View Rules and Guides</a>
     </div>
   </section>
 
   <!-- Features Section -->
   <section id="features">
-    <h2>Why Join Earth.MC?</h2>
-    <p>Experience Minecraft like never before with our unique geopolitical gameplay mechanics.</p>
+    <h2>Server Features</h2>
+    <p>Earth.MC provides specialized systems designed for geopolitical gameplay and nation management.</p>
     <div class="features-grid">
       <div class="feature-card">
-        <h3>🏛️ Government Systems</h3>
-        <p>Choose your government type: Democracy, Monarchy, Republic, or create your own system.</p>
+        <h3>Government Structures</h3>
+        <p>Implement various government systems including democracies, monarchies, and republics with full administrative control.</p>
       </div>
       <div class="feature-card">
-        <h3>📜 Custom Plugins</h3>
-        <p>Exclusive plugins designed for geopolitical gameplay and nation management.</p>
+        <h3>Custom Plugins</h3>
+        <p>Purpose-built plugins for territorial management, warfare mechanics, and diplomatic relations.</p>
       </div>
       <div class="feature-card">
-        <h3>🎯 Active Community</h3>
-        <p>Join hundreds of players in an active, friendly, and competitive community.</p>
+        <h3>Active Community</h3>
+        <p>Join an established community of players engaged in ongoing geopolitical events and conflicts.</p>
       </div>
       <div class="feature-card">
-        <h3>🛡️ Fair Moderation</h3>
-        <p>Dedicated staff team ensuring fair play and resolving conflicts impartially.</p>
+        <h3>Moderation Team</h3>
+        <p>Dedicated administration ensuring fair gameplay and impartial conflict resolution.</p>
       </div>
     </div>
   </section>
@@ -437,23 +447,23 @@
   <!-- Rules Preview -->
   <section id="rules">
     <h2>Server Rules</h2>
-    <p>We maintain a fair and enjoyable environment for all players. Key rules include:</p>
+    <p>Earth.MC maintains strict standards to ensure fair and balanced gameplay for all participants.</p>
     <div class="feature-card" style="max-width: 800px; margin: 2rem auto;">
-      <p style="text-align: left; margin-bottom: 0.5rem;">✓ No griefing outside of declared wars</p>
-      <p style="text-align: left; margin-bottom: 0.5rem;">✓ Respect all players and staff</p>
-      <p style="text-align: left; margin-bottom: 0.5rem;">✓ Follow nation and alliance agreements</p>
-      <p style="text-align: left; margin-bottom: 0.5rem;">✓ No hacking or exploiting</p>
-      <p style="text-align: left;">✓ Build responsibly and respect borders</p>
+      <p style="text-align: left; margin-bottom: 0.5rem;">No griefing outside of declared war zones</p>
+      <p style="text-align: left; margin-bottom: 0.5rem;">Respect all players and administrative staff</p>
+      <p style="text-align: left; margin-bottom: 0.5rem;">Honor international agreements and treaties</p>
+      <p style="text-align: left; margin-bottom: 0.5rem;">Prohibited use of hacks or exploits</p>
+      <p style="text-align: left;">Observe territorial boundaries and building regulations</p>
     </div>
     <div style="text-align: center; margin-top: 2rem;">
-      <a href="https://docs.google.com/document/d/1HYHfjA6p3PQEadXiR0ExEz6emdcRSdyWFVcYeZwYDRc/edit?usp=sharing" class="btn btn-secondary" target="_blank">Read Full Rules</a>
+      <a href="https://docs.google.com/document/d/1HYHfjA6p3PQEadXiR0ExEz6emdcRSdyWFVcYeZwYDRc/edit?usp=sharing" class="btn btn-secondary" target="_blank">Read Full Documentation</a>
     </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact">
-    <h2>Join Our Community</h2>
-    <p>Connect with us on Discord for support, updates, and to be part of our growing community!</p>
+    <h2>Community</h2>
+    <p>Connect with our community on Discord for technical support, server updates, and player coordination.</p>
     <div style="text-align: center; margin-top: 2rem;">
       <a href="https://discord.gg/YOURSERVERLINK" class="btn btn-primary" target="_blank">Join Discord Server</a>
     </div>
