@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Earth.MC - Geopolitical Minecraft Server">
+  <meta name="description" content="Earth.MC - The next generation of geopolitical Minecraft servers">
   <title>Earth.MC | Geopolitical Minecraft Server</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   
   <style>
     * {
@@ -20,6 +20,7 @@
       --emerald: #50c878;
       --dark-bg: #0f0f0f;
       --light-text: #ecf0f1;
+      --accent-gold: #ffd700;
     }
 
     body {
@@ -29,7 +30,6 @@
       overflow-x: hidden;
     }
 
-    /* Custom Minecraft-style background */
     body::before {
       content: '';
       position: fixed;
@@ -56,7 +56,6 @@
       z-index: -1;
     }
 
-    /* Navigation */
     nav {
       display: flex;
       justify-content: space-between;
@@ -113,7 +112,6 @@
       color: var(--emerald);
     }
 
-    /* Hero Section */
     .hero {
       min-height: 90vh;
       display: flex;
@@ -158,11 +156,20 @@
       }
     }
 
+    .hero .tagline {
+      font-size: 1.5rem;
+      color: var(--accent-gold);
+      margin-bottom: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
     .hero .subtitle {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       color: var(--light-text);
       margin-bottom: 3rem;
-      max-width: 700px;
+      max-width: 800px;
       line-height: 1.8;
     }
 
@@ -214,7 +221,6 @@
       transform: translateY(-2px);
     }
 
-    /* Sections */
     section {
       max-width: 1200px;
       margin: 4rem auto;
@@ -243,6 +249,76 @@
       text-align: center;
     }
 
+    .vision-box {
+      background: linear-gradient(135deg, rgba(45, 80, 22, 0.3), rgba(92, 184, 92, 0.1));
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 2px solid var(--grass-green);
+      margin: 2rem 0;
+      border-left: 6px solid var(--accent-gold);
+    }
+
+    .vision-box h3 {
+      color: var(--accent-gold);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 800;
+    }
+
+    .vision-box p {
+      text-align: left;
+      font-size: 1.05rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .feature-card {
+      background: rgba(45, 80, 22, 0.2);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 2px solid rgba(92, 184, 92, 0.5);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 0;
+      background: var(--grass-green);
+      transition: height 0.3s ease;
+    }
+
+    .feature-card:hover::before {
+      height: 100%;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--grass-green);
+      box-shadow: 0 8px 24px rgba(92, 184, 92, 0.3);
+    }
+
+    .feature-card h3 {
+      color: var(--emerald);
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .feature-card p {
+      font-size: 1rem;
+      text-align: left;
+    }
+
     .server-info {
       background: rgba(45, 80, 22, 0.2);
       padding: 2rem;
@@ -269,40 +345,56 @@
       transform: scale(1.02);
     }
 
-    .features-grid {
+    .stat-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
       margin-top: 2rem;
     }
 
-    .feature-card {
-      background: rgba(45, 80, 22, 0.2);
-      padding: 2rem;
-      border-radius: 12px;
-      border: 2px solid rgba(92, 184, 92, 0.5);
+    .stat-box {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid rgba(92, 184, 92, 0.3);
+      text-align: center;
+    }
+
+    .stat-box h4 {
+      color: var(--grass-green);
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-box p {
+      color: var(--light-text);
+      font-size: 0.95rem;
+    }
+
+    .plugin-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .plugin-tag {
+      background: rgba(92, 184, 92, 0.2);
+      color: var(--emerald);
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      border: 2px solid var(--grass-green);
+      font-weight: 600;
       transition: all 0.3s ease;
     }
 
-    .feature-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--grass-green);
-      box-shadow: 0 8px 24px rgba(92, 184, 92, 0.3);
+    .plugin-tag:hover {
+      background: rgba(92, 184, 92, 0.4);
+      transform: scale(1.05);
     }
 
-    .feature-card h3 {
-      color: var(--emerald);
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-
-    .feature-card p {
-      font-size: 1rem;
-      text-align: left;
-    }
-
-    /* Footer */
     footer {
       background: rgba(15, 15, 15, 0.95);
       text-align: center;
@@ -316,7 +408,6 @@
       font-size: 0.9rem;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
@@ -332,6 +423,10 @@
 
       .hero h1 {
         font-size: 2rem;
+      }
+
+      .hero .tagline {
+        font-size: 1rem;
       }
 
       .hero .subtitle {
@@ -355,123 +450,169 @@
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav>
     <div class="logo">EARTH.MC</div>
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#server">Server Info</a></li>
+      <li><a href="#vision">Vision</a></li>
       <li><a href="#features">Features</a></li>
-      <li><a href="#rules">Rules</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#server">Server Info</a></li>
+      <li><a href="#contact">Discord</a></li>
     </ul>
   </nav>
 
-  <!-- Hero Section -->
   <div class="hero">
     <div class="hero-content">
       <h1>EARTH.MC</h1>
-      <p class="subtitle">A geopolitical Minecraft server on a real-world Earth map. Build nations, forge alliances, and engage in strategic warfare that shapes global history.</p>
+      <p class="tagline">Rebirth of Geopolitical Minecraft</p>
+      <p class="subtitle">We're building what geopolitical servers were always meant to be. No bloat. No compromises. Just pure, refined gameplay on a 1:500 scale Earth map with fully custom development.</p>
       <div class="cta-buttons">
-        <a href="https://discord.gg/YOURSERVERLINK" class="btn btn-primary" target="_blank">Join Discord</a>
-        <a href="#server" class="btn btn-secondary">Get Server IP</a>
+        <a href="https://discord.gg/ABEu3GTRbT" class="btn btn-primary" target="_blank">Join Discord</a>
+        <a href="#server" class="btn btn-secondary">Server Details</a>
       </div>
     </div>
   </div>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Earth.MC</h2>
-    <p>Earth.MC is a geopolitical Minecraft server featuring a 1:1000 scale Earth map. Players establish nations, manage economies, conduct diplomacy, and participate in strategic warfare across all continents.</p>
-    <div class="features-grid">
-      <div class="feature-card">
-        <h3>Nations and Warfare</h3>
-        <p>Establish or join nations, declare wars, and conquer territories through strategic military operations.</p>
+  <section id="vision">
+    <h2>Our Vision</h2>
+    <div class="vision-box">
+      <h3>Setting a New Standard</h3>
+      <p>Earth.MC isn't another geopolitical server. We're building the most professional Minecraft geopolitical experience from the ground up. Every plugin custom-coded. Every feature optimized. Every detail refined.</p>
+      <p style="margin-top: 1rem;">We know earning your trust takes time. That's why we're focused on delivering results, not promises. Our staff maintains extreme professionalism. Our systems are modern and streamlined. No useless features. No outdated mechanics. Just the golden era of geopolitics, reimagined for today.</p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-box">
+        <h4>1:500</h4>
+        <p>Scale Earth Map</p>
       </div>
-      <div class="feature-card">
-        <h3>Real Earth Map</h3>
-        <p>Navigate an accurate Earth terrain map featuring real-world geography, biomes, and landmasses.</p>
+      <div class="stat-box">
+        <h4>100%</h4>
+        <p>Custom Development</p>
       </div>
-      <div class="feature-card">
-        <h3>Political Systems</h3>
-        <p>Engage in complex diplomatic relations, negotiate treaties, and form international alliances.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Economic Development</h3>
-        <p>Develop national economies through resource management, trade agreements, and infrastructure development.</p>
+      <div class="stat-box">
+        <h4>24/7</h4>
+        <p>Professional Staff</p>
       </div>
     </div>
   </section>
 
-  <!-- Server Info Section -->
+  <section id="features">
+    <h2>What Sets Us Apart</h2>
+    <p>Everything on Earth.MC is purpose-built for one goal: the best geopolitical experience.</p>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>Custom Plugin Development</h3>
+        <p>Every major system is coded specifically for Earth.MC. No generic plugins. No legacy code. Built for performance and simplicity.</p>
+      </div>
+      
+      <div class="feature-card">
+        <h3>Custom Models & Events</h3>
+        <p>Original 3D models for vehicles, buildings, and items. Dynamic world events that respond to player actions and create emergent gameplay.</p>
+      </div>
+      
+      <div class="feature-card">
+        <h3>Optimized for Usability</h3>
+        <p>Complex systems with simple interfaces. Powerful mechanics that don't require reading a manual. Everything just works.</p>
+      </div>
+      
+      <div class="feature-card">
+        <h3>Staff Professionalism</h3>
+        <p>Our team is held to the highest standards. Impartial moderation. Quick response times. Zero tolerance for abuse of power.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Modern Infrastructure</h3>
+        <p>High-performance servers. Minimal lag. Regular backups. Everything optimized for 100+ concurrent players.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Realistic Seasons System</h3>
+        <p>Dynamic seasons that affect gameplay, agriculture, and military strategy. Plan your campaigns around winter conditions.</p>
+      </div>
+    </div>
+
+    <h3 style="color: var(--grass-green); text-align: center; margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.5rem;">Core Plugins</h3>
+    <div class="plugin-list">
+      <div class="plugin-tag">Lands Management</div>
+      <div class="plugin-tag">Realistic Seasons</div>
+      <div class="plugin-tag">Custom Security Suite</div>
+      <div class="plugin-tag">Vehicle System</div>
+      <div class="plugin-tag">Advanced Combat</div>
+      <div class="plugin-tag">Economy & Trade</div>
+      <div class="plugin-tag">Diplomacy Tools</div>
+      <div class="plugin-tag">Custom Events</div>
+    </div>
+  </section>
+
+  <section id="security">
+    <h2>Security First</h2>
+    <p>Cheaters destroy geopolitical servers. We've made eliminating them our priority.</p>
+    
+    <div class="vision-box">
+      <h3>Extensive Anti-Cheat Measures</h3>
+      <p>Custom-coded security plugins monitor player behavior in real-time. Advanced detection algorithms catch what generic anti-cheats miss. Every report investigated thoroughly by trained staff.</p>
+      <p style="margin-top: 1rem;">Our goal is simple: make Earth.MC the cleanest geopolitical server in existence. When you lose a war, it should be because you were outplayed, not because someone had an unfair advantage.</p>
+    </div>
+
+    <div class="features-grid" style="margin-top: 2rem;">
+      <div class="feature-card">
+        <h3>Custom Anti-Cheat</h3>
+        <p>Purpose-built detection systems specifically designed for geopolitical gameplay mechanics.</p>
+      </div>
+      
+      <div class="feature-card">
+        <h3>Active Monitoring</h3>
+        <p>Staff review suspicious activity in real-time. Swift bans for confirmed cheaters with no appeal.</p>
+      </div>
+      
+      <div class="feature-card">
+        <h3>Community Reports</h3>
+        <p>Streamlined reporting system with transparent investigation processes and public ban logs.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="server">
     <h2>Server Information</h2>
     <div class="server-info">
-      <p style="font-size: 1.1rem; margin-bottom: 1rem;">Server Address</p>
+      <p style="font-size: 1.1rem; margin-bottom: 1rem;">Connect Now</p>
       <div class="server-ip" onclick="navigator.clipboard.writeText('play.earth.mc'); alert('Server IP copied to clipboard')">
         play.earth.mc
       </div>
-      <p style="font-size: 0.9rem; color: var(--emerald);">Click to copy</p>
-      <p style="margin-top: 2rem;"><strong>Version:</strong> 1.20+</p>
-      <p><strong>Active Players:</strong> 100+ Daily</p>
+      <p style="font-size: 0.9rem; color: var(--emerald); margin-bottom: 2rem;">Click to copy</p>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; text-align: center;">
+        <div>
+          <p><strong>Version</strong></p>
+          <p style="color: var(--emerald);">1.20+</p>
+        </div>
+        <div>
+          <p><strong>Map Scale</strong></p>
+          <p style="color: var(--emerald);">1:500 Earth</p>
+        </div>
+        <div>
+          <p><strong>Status</strong></p>
+          <p style="color: var(--emerald);">Coming Soon</p>
+        </div>
+      </div>
     </div>
     <div style="text-align: center; margin-top: 2rem;">
-      <a href="https://docs.google.com/document/d/1HYHfjA6p3PQEadXiR0ExEz6emdcRSdyWFVcYeZwYDRc/edit?usp=sharing" class="btn btn-primary" target="_blank">View Rules and Guides</a>
+      <a href="https://docs.google.com/document/d/1HYHfjA6p3PQEadXiR0ExEz6emdcRSdyWFVcYeZwYDRc/edit?usp=sharing" class="btn btn-primary" target="_blank">View Documentation</a>
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section id="features">
-    <h2>Server Features</h2>
-    <p>Earth.MC provides specialized systems designed for geopolitical gameplay and nation management.</p>
-    <div class="features-grid">
-      <div class="feature-card">
-        <h3>Government Structures</h3>
-        <p>Implement various government systems including democracies, monarchies, and republics with full administrative control.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Custom Plugins</h3>
-        <p>Purpose-built plugins for territorial management, warfare mechanics, and diplomatic relations.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Active Community</h3>
-        <p>Join an established community of players engaged in ongoing geopolitical events and conflicts.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Moderation Team</h3>
-        <p>Dedicated administration ensuring fair gameplay and impartial conflict resolution.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Rules Preview -->
-  <section id="rules">
-    <h2>Server Rules</h2>
-    <p>Earth.MC maintains strict standards to ensure fair and balanced gameplay for all participants.</p>
-    <div class="feature-card" style="max-width: 800px; margin: 2rem auto;">
-      <p style="text-align: left; margin-bottom: 0.5rem;">No griefing outside of declared war zones</p>
-      <p style="text-align: left; margin-bottom: 0.5rem;">Respect all players and administrative staff</p>
-      <p style="text-align: left; margin-bottom: 0.5rem;">Honor international agreements and treaties</p>
-      <p style="text-align: left; margin-bottom: 0.5rem;">Prohibited use of hacks or exploits</p>
-      <p style="text-align: left;">Observe territorial boundaries and building regulations</p>
-    </div>
-    <div style="text-align: center; margin-top: 2rem;">
-      <a href="https://docs.google.com/document/d/1HYHfjA6p3PQEadXiR0ExEz6emdcRSdyWFVcYeZwYDRc/edit?usp=sharing" class="btn btn-secondary" target="_blank">Read Full Documentation</a>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
   <section id="contact">
-    <h2>Community</h2>
-    <p>Connect with our community on Discord for technical support, server updates, and player coordination.</p>
+    <h2>Join the Community</h2>
+    <p>Follow development progress, provide feedback, and be first to know when we launch.</p>
     <div style="text-align: center; margin-top: 2rem;">
-      <a href="https://discord.gg/YOURSERVERLINK" class="btn btn-primary" target="_blank">Join Discord Server</a>
+      <a href="https://discord.gg/ABEu3GTRbT" class="btn btn-primary" target="_blank">Join Discord Server</a>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Earth.MC Geopolitical Minecraft Server. All rights reserved.</p>
+    <p>&copy; 2025 Earth.MC. Building the future of geopolitical Minecraft.</p>
   </footer>
 
 </body>
