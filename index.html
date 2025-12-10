@@ -3,110 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Official server website for our Geopolitical Minecraft community.">
+  <meta name="description" content="Official Geopolitical Minecraft Server website">
   <title>Geopolitical Minecraft Server</title>
-  
+
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
   <!-- Styles -->
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Roboto', sans-serif; }
+    body { background: url('https://i.imgur.com/ld7XO9h.png') no-repeat center center fixed; background-size: cover; color: #fff; }
 
-    body {
-      background: linear-gradient(135deg, #1f1c2c, #928dab);
-      color: #fff;
-      min-height: 100vh;
+    /* Top Navigation Bar */
+    nav {
       display: flex;
-      flex-direction: column;
       justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.8);
+      padding: 1rem 2rem;
+      font-family: 'Press Start 2P', cursive;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 4px solid #f8b400;
     }
 
+    nav .logo { font-size: 1.2rem; color: #f8b400; }
+    nav ul { display: flex; gap: 1.5rem; list-style: none; }
+    nav ul li a { color: #fff; text-decoration: none; transition: 0.3s; }
+    nav ul li a:hover { color: #f8b400; }
+
+    /* Hero Section */
     header {
-      padding: 2rem;
-      text-align: center;
-      background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(10px);
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      color: #f0d67b;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #e0e0e0;
-    }
-
-    main {
-      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      min-height: 80vh;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(5px);
+      text-align: center;
       padding: 2rem;
-      text-align: center;
     }
+    header h1 { font-family: 'Press Start 2P', cursive; font-size: 3rem; color: #f8b400; margin-bottom: 1rem; text-shadow: 2px 2px #000; }
+    header p { font-size: 1.2rem; color: #e0e0e0; margin-bottom: 2rem; }
+    header a.button { display: inline-block; padding: 1rem 2rem; margin: 0.5rem; background: #f8b400; color: #1f1c2c; font-weight: 700; border-radius: 8px; text-decoration: none; transition: transform 0.3s, background 0.3s; }
+    header a.button:hover { background: #ffd15c; transform: scale(1.05); }
 
-    main h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #f8b400;
-    }
+    /* Sections */
+    section { padding: 4rem 2rem; text-align: center; background: rgba(0,0,0,0.5); margin-bottom: 2rem; border-radius: 10px; width: 90%; max-width: 1200px; margin-left: auto; margin-right: auto; }
+    section h2 { font-family: 'Press Start 2P', cursive; font-size: 2rem; color: #f8b400; margin-bottom: 1.5rem; }
+    section p { font-size: 1rem; line-height: 1.6; color: #e0e0e0; margin-bottom: 1rem; }
+    section a.button { padding: 0.8rem 1.5rem; background: #f8b400; color: #1f1c2c; font-weight: 600; text-decoration: none; border-radius: 6px; transition: 0.3s; }
+    section a.button:hover { background: #ffd15c; transform: scale(1.05); }
 
-    main a.button {
-      display: inline-block;
-      padding: 1rem 2rem;
-      margin-top: 1rem;
-      background: #f8b400;
-      color: #1f1c2c;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s, transform 0.3s;
-    }
-
-    main a.button:hover {
-      background: #ffd15c;
-      transform: scale(1.05);
-    }
-
+    /* Footer */
     footer {
-      padding: 1rem 2rem;
+      background: rgba(0,0,0,0.8);
       text-align: center;
+      padding: 1rem 2rem;
       font-size: 0.9rem;
-      background: rgba(0,0,0,0.4);
-      backdrop-filter: blur(10px);
+      border-top: 4px solid #f8b400;
     }
 
-    @media (max-width: 600px) {
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul { flex-direction: column; gap: 1rem; }
       header h1 { font-size: 2rem; }
-      main h2 { font-size: 1.5rem; }
-      main a.button { padding: 0.8rem 1.5rem; }
+      header p { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
 
+  <!-- Top Navigation -->
+  <nav>
+    <div class="logo">GeoMC</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#server">Server Info</a></li>
+      <li><a href="#rules">Rules</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
   <header>
-    <h1>Geopolitical Minecraft Server</h1>
-    <p>Welcome to our official community website</p>
+    <h1>Geopolitical Minecraft</h1>
+    <p>Welcome to the ultimate geopolitical Minecraft experience! Join nations, wars, and diplomacy in a living world.</p>
+    <a class="button" href="https://discord.gg/YOURSERVERLINK" target="_blank">Join Discord</a>
+    <a class="button" href="#server">Server IP</a>
   </header>
 
-  <main>
-    <h2>Join Our Server Today!</h2>
-    <p>IP Address: <strong>play.yourserver.com</strong></p>
-    <a class="button" href="https://discord.gg/YOURSERVERLINK" target="_blank">Join Discord</a>
-    <a class="button" href="https://docs.google.com/document/d/1HYHfjA6p3PQEadXiR0ExEz6emdcRSdyWFVcYeZwYDRc/edit?usp=sharing" target="_blank">View Server Rules</a>
-  </main>
+  <!-- About Section -->
+  <section id="about">
+    <h2>About the Server</h2>
+    <p>Experience a fully interactive Minecraft world where nations compete, trade, and strategize. Build your land, lead your people, and engage in wars that shape the world map.</p>
+  </section>
 
+  <!-- Server Info Section -->
+  <section id="server">
+    <h2>Server Info</h2>
+    <p>IP Address: <strong>play.yourserver.com</strong></p>
+    <p>Version: <strong>1.20+</strong></p>
+    <p>Rules, Guides, and Nation Registrations are all linked below for easy access.</p>
+    <a class="button" href="https://docs.google.com/document/d/1HYHfjA6p3PQEadXiR0ExEz6emdcRSdyWFVcYeZwYDRc/edit?usp=sharing" target="_blank">View Rules</a>
+  </section>
+
+  <!-- Blog Section (Placeholder) -->
+  <section id="blog">
+    <h2>Server Blog</h2>
+    <p>Stay tuned for updates, patch notes, war recaps, and community announcements. New posts coming soon!</p>
+    <a class="button" href="#blog">Read Blog</a>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Join our Discord to ask questions, report issues, or chat with staff and players. We’re always here to help!</p>
+    <a class="button" href="https://discord.gg/YOURSERVERLINK" target="_blank">Join Discord</a>
+  </section>
+
+  <!-- Footer -->
   <footer>
     &copy; 2025 Geopolitical Minecraft Server. All rights reserved.
   </footer>
